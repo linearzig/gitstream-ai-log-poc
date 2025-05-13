@@ -1,0 +1,12 @@
+manifest:
+  version: 1.0
+
+automations:
+  label_ai_tool_usage:
+    if:
+      - source.diff.files | match(list=['.github/ai.log']) | some
+    run:
+      - action: add-labels@v1
+        args:
+          labels:
+            - ai-tool-usage 
