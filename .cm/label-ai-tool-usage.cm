@@ -4,7 +4,7 @@ manifest:
 automations:
   label_ai_tool_usage:
     if:
-      - source.diff.files | match(list=['.github/ai.log']) | some
+      - source.diff.files | match(list=['.github/ai.txt']) | some
     run:
       - action: add-labels@v1
         args:
