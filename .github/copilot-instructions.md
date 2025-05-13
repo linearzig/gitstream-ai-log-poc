@@ -3,3 +3,4 @@
 - Each entry in .github/ai.log is formatted like this on a new line: "<tool> <timestamp>" (e.g., "copilot 1747169541")
 - If .github/ai.log does not exist, create it.
 - Append the log entry to the end of .github/ai.log, never overwrite or delete it.
+- You may use your own accurate, internally generated Unix timestamp for logging, as long as it matches the required format.
