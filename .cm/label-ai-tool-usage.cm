@@ -4,7 +4,7 @@ manifest:
 automations:
   label_ai_tool_usage:
     if: 
-      - {{ files | includes(term='ai.log' }}
+      - {{ files | includes(term='.cm/ai.log') }}
     run:
       - action: add-labels@v1
         args:
