@@ -17,8 +17,8 @@ These instructions ensure that all edits, file creations, and terminal commands 
 
      ```json
      {
-       "tool": "copilot",
-       "id": "<id of last entry, incremented by 1 (or 0 if first entry)>"
+       "id": "<id of last entry, incremented by 1 (or 0 if first entry)>",
+       "tool": "copilot"
      }
      ```
 

@@ -22,13 +22,15 @@ These instructions ensure that all edits, file creations, and terminal commands 
 
      ```json
      {
+       "id": "<id of last entry, incremented by 1 (or 0 if first entry)>",
        "tool": "cursor",
-       "id": "<id of last entry, incremented by 1 (or 0 if first entry)>"
+       "model": "<current model id configured for the chat session, e.g. 'claude-3.5-sonnet'>"
      }
      ```
 
    - Never add unexpected fields like "action", "file", or "timestamp".
    - Ensure the tool name is correct ("cursor" not "copilot").
+   - Ensure the model name is correct for the current chat session, do not assume on past entries.
    - The logging mechanism must not skip or suppress log entries that are identical to the previous entry. Every action must result in a new line in the log.
 
 3. **Read-Append-Read-Verify Cycle (MANDATORY)**:
@@ -69,3 +71,11 @@ These instructions ensure that all edits, file creations, and terminal commands 
 - If in doubt, refer to the examples provided above.
 - These steps guarantee that `.cm/ai.log` is always accurate and compliant with logging requirements.
 - Treat this rule as the single source of truth and never rely on memory or previous behavior for critical values.
+
+## Model Field Hardening (MANDATORY)
+
+- The `model` field in every log entry **must** exactly match the actual, current model id for the chat session (e.g., 'gpt-4.1').
+- The model id must be programmatically sourced from the current session, never assumed, hardcoded, or copied from previous entries.
+- Any deviation (e.g., using a stale, default, or incorrect model id) is a violation of this rule.
+- If the model id is not available, halt and do not log until the correct value can be obtained.
+- Verification must include checking that the model id in the new entry matches the current session's model id.
