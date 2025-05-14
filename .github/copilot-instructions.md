@@ -1,8 +1,55 @@
-- If .cm/ai.log does not exist, create it.
-- Every time you edit or create any file, or invoke a terminal command, append your tool name (e.g., "cursor") and your model name (e.g., "sonnet3.7") to the end of .cm/ai.log
-- Each entry in .cm/ai.log is formatted as standalone valid JSON on a new line: {"tool": "cursor", "model": "claude-3-7-sonnet-latest"}
-- Append the log entry to the end of .cm/ai.log, never overwrite or delete it.
-- After appending a log entry, verify that the .cm/ai.log file contains the new entry in the correct format and that no existing content has been altered. If any issues are detected, correct them immediately.
-- If an error occurs, such as overwriting the file or appending an incorrect entry, restore the original content of .cm/ai.log. Then, append the correct log entry to ensure the file remains accurate and complete.
-- Always ensure the model name in the log entry matches the exact model currently in use (e.g., "gpt-4o"). Double-check this before appending the entry.
-- Before appending a log entry, verify that both the tool name and model name are accurate and conform to the required format.
+# Copilot Instructions for Tracking AI Usage
+
+## Purpose
+
+These instructions ensure that all edits, file creations, and terminal commands are logged accurately in `.cm/ai.log`.
+
+## Steps
+
+1. **Check for `.cm/ai.log`**:
+
+   - If the file does not exist, create it.
+
+2. **Log Every Action**:
+
+   - After editing or creating a file, or invoking a terminal command, append a log entry to `.cm/ai.log`.
+   - Each log entry must be a valid JSON object on a new line, formatted as:
+     ```json
+     { "tool": "<tool_name>", "model": "<model_name>" }
+     ```
+     Example:
+     ```json
+     { "tool": "copilot", "model": "gpt-4o" }
+     ```
+
+3. **Append, Never Overwrite**:
+
+   - Always append the log entry to the end of the file.
+   - **Do not overwrite or delete existing content.**
+
+4. **Verify the Log Entry**:
+
+   - After appending, ensure:
+     - The new entry is correctly formatted.
+     - No existing content has been altered.
+   - If any issues are detected:
+     - Restore the original content of `.cm/ai.log`.
+     - Append the correct log entry again.
+
+5. **Handle Errors**:
+
+   - If an error occurs (e.g., overwriting the file or appending an incorrect entry):
+     - Restore the original content.
+     - Append the correct log entry.
+
+6. **Ensure Accuracy**:
+
+   - Verify that:
+     - The `tool` name is "copilot".
+     - The `model` name matches the current model in use (e.g., "gpt-4o").
+
+## Notes
+
+- Double-check the `tool` and `model` names before appending.
+- Use consistent formatting for all log entries.
+- If in doubt, refer to the examples provided above.
