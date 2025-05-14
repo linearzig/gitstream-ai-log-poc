@@ -2,3 +2,7 @@
 - Every time you edit or create any file, or invoke a terminal command, append your tool name (e.g., "cursor") and your model name (e.g., "sonnet3.7") to the end of .cm/ai.log
 - Each entry in .cm/ai.log is formatted as standalone valid JSON on a new line: {"tool": "cursor", "model": "claude-3-7-sonnet-latest"}
 - Append the log entry to the end of .cm/ai.log, never overwrite or delete it.
+- After appending a log entry, verify that the .cm/ai.log file contains the new entry in the correct format and that no existing content has been altered. If any issues are detected, correct them immediately.
+- If an error occurs, such as overwriting the file or appending an incorrect entry, restore the original content of .cm/ai.log. Then, append the correct log entry to ensure the file remains accurate and complete.
+- Always ensure the model name in the log entry matches the exact model currently in use (e.g., "gpt-4o"). Double-check this before appending the entry.
+- Before appending a log entry, verify that both the tool name and model name are accurate and conform to the required format.
