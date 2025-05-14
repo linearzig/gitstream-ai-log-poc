@@ -3,8 +3,8 @@ manifest:
 
 automations:
   label_ai_tool_usage:
-    if:
-      - source.diff.files | match(list=['.github/ai.txt']) | some
+    if: 
+      - {{ files | includes(term='ai.log' }}
     run:
       - action: add-labels@v1
         args:

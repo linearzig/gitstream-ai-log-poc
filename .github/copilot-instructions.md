@@ -1,5 +1,4 @@
-- Every time you edit or create any file, or invoke a terminal command, append your tool name "copilot" and a timestamp to the end of .github/ai.txt
-- Timestamps should be formatted as Unix timestamps. (e.g., 1747169541)
-- Each entry in .github/ai.txt is formatted like this on a new line: "<tool> <timestamp>" (e.g., "copilot 1747169541")
-- If .github/ai.txt does not exist, create it.
-- Append the log entry to the end of .github/ai.txt, never overwrite or delete it.
+- If .cm/ai.log does not exist, create it.
+- Every time you edit or create any file, or invoke a terminal command, append your tool name (e.g., "cursor") and your model name (e.g., "sonnet3.7") to the end of .cm/ai.log
+- Each entry in .cm/ai.log is formatted as standalone valid JSON on a new line: {"tool": "cursor", "model": "claude-3-7-sonnet-latest"}
+- Append the log entry to the end of .cm/ai.log, never overwrite or delete it.
